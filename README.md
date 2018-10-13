@@ -1,0 +1,1 @@
+A twitter clone sample application build using Django.
