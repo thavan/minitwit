@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ tweets.0.author.username }}'s tweets{% endblock %}
+
+{% block content %}
+    {% for tweet in tweets %}
+    <div class="row">
+    	<div class="col-10 m-auto">
+    		<div class="card my-1">
+    			<div class="card-body">
+    				<h5 class="card-title">
+    					{{ tweet.author.username }}
+    				</h5>
+    				<p class="card-text">
+    					{{ tweet.text }}
+    				</p>
+    			</div>
+    		</div>
+    		
+    	</div>
+    </div>
+    {% endfor %}
+{% endblock content %}

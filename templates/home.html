@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if request.user.is_authenticated %}
+
+	{% else %}
+	<div class="py-5 col-md-8 m-auto">
+		<a class="btn btn-primary btn-md btn-block" href="{% url 'signup' %}">Sign-Up</button>
+		<a class="btn btn-secondary btn-md btn-block" href="{% url 'login' %}">Sign-In</a>
+	</div>
+	{% endif %}
+{% endblock content %}
