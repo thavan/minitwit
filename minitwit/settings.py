@@ -25,7 +25,7 @@ SECRET_KEY = '3+_*oz44!3tn=if%$d%$1x8+8)2^dbhpy44a(ksd$ic_5&=-8%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['minitwit.thavanathan.com']
 
 
 # Application definition
@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'minitwit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'minitwit',
-        'USER': 'minitwit',
-        'PASSWORD': 'minitwit',
-        'PORT': 5432
+        'NAME': os.environ['MINITWIT_DBNAME'],
+        'USER': os.environ['MINITWIT_DBUSER'],
+        'PASSWORD': os.environ['MINITWIT_DBPASSWORD'],
+        'PORT': os.environ['MINITWIT_DBPORT'],
     }
 }
 
